@@ -62,3 +62,49 @@ Bạn vừa chạy chương trình Go đầu tiên! Bây giờ, nhìn vào code 
 Mọi file Go bắt đầu với mệnh đề `package`. Một `package` là một tập hợp code, tất cả đều làm điều tương tự, như định dạng một chuỗi hoặc là vẽ một hình ảnh. Mệnh đề `package` cho biết tên của gói nơi file code sẽ trở thành một phần. Trong trường hợp này, chúng tôi sử dụng gói đặc biệt `main`, thứ bắt buộc nếu mã này sẽ được chạy trực tiếp(thường là từ `termnial`).
 Tiếp đến, Go file luôn luôn có một hoặc nhiều câu lệnh `import`. Mỗi file cần `import` từ một `package`trước khi code có thể được sử dụng từ các gói khác. Tải tất cả Go code ở trong máy tính của bạn trong một lần sẽ dẫn đến một chương trình lớn, chương trình chậm, vì thế thay vào đó bạn chỉ nên xác định các gọi bạn cần bằng cách nhập chúng.
 Phần cuối cùng của mọi Go file là code thực sự, cái mà thường được chia thành một hay nhiều `functions`. Một `functions` là một tập hợp một hoặc nhiều dòng code, bạn có thể `call(run)` từ những nơi khác ở trong chương trình của bạn. Khi mà chương trình Go chạy, nó tìm kiếm một function tên là `main` và chạy nó đầu tiên, đó là lý do tại sao chúng tôi đặt tên nó là `main`.
+
+
+## Bố cục file Go điển hỉnh
+Bạn sẽ nhanh chóng làm quen với việc 3 phần như này, theo thứ tự này, mọi file Go bạn làm với:
+1. Mệnh đề ``package``
+2. Cú pháp ``import``
+3. Code
+
+Câu nói ``một nơi cho mọi thứ, và mọi thứ ở đúng vị trí của nó``. Go là một ngôn ngữ nhất quán. Đây là một điều tốt: bạn thường xuyên tìm kiếm,  bạn chỉ cần tìm một đoạn mã nhất định trong dự án của mình mà không cần phải suy nghĩ về nó.
+
+## Một vài chú ý
+1. Bạn có thể sử dụng dấu chấm phẩy ở cuối dòng code, nhưng điều đó là không cần thiết.
+Nó sẽ được lược bỏ nếu bạn sử dụng ``fmt``
+2. ``Go convention`` đến từ ``fmt package``
+
+## Hàm được gọi như thế nào?
+Ví dụ của chúng ta bao gồm một function từ ``fmt package``. Để gọi một function, hãy lấy tên function đó (``Println`` trong trường hợp này), và một cặp dấu ngoặc đơn.
+Giống như nhiều function, ``Println`` có thể nhận một hoặc nhiều ``arguments``: giá trị bạn muốn function làm việc với.
+``Println`` có thể được gọi mà không cần ``arguments``, hoặc bạn có thể cung cấp một số ``arguments``. Khi chúng ta xem xét các chức năng khác sau, tuy nhiên, bạn sẽ tìm kiếm hầu hết một tham số cụ thể. Nếu bạn cung cấp nhiều hơm, bạn sẽ nhận được thông báo lỗi số lượng tham số mong chờ và bạn sẽ sửa code của bạn.
+
+## The Println function
+Sử dụng ``Println function`` khi bạn muốn nhìn thấy chương trình của bạn đang làm. Bất cứ tham số bạn truyền vào nó sẽ được in ra(hiện thị) ở trên ``terminal`` của bạn, mỗi tham số được ngăn cách bởi một dòng.
+
+Sau khi in hết những tham số, ``Println`` sẽ bỏ qua một dòng trên ``terminal``. (Đó là lý do tại sao nó có ``ln`` ở trong tên)
+
+## Sử dụng function từ một package khác.
+Code trong chương trình đầu tiên của chúng ta là một phần của gói ``main``, nhưng ``Println`` function ở trong gói ``fmt``. Để có thể sử dụng ``Println``, đầu tiên chúng ta phải ``import`` gói chứa nó.
+
+Một khi chúng ta ``import`` gói, chúng ta có thể truy cập bất cứ function nào. Sử dụng cú phát `` name package + . + name function`` để sử dụng function mà chúng ta muốn.
+```
+Ex: fmt.Println()
+```
+Code mẫu sẽ gọi hàm từ hai gói khác. Bởi vì chúng ta muốn ``import`` nhiều gói, chúng ta chuyển sang một định dạng thay thế cho cú pháp ``import``, bạn có thể liệt kê danh sách gói bên trong ngoặc đơn, mỗi gói một dòng
+```
+package main
+import (
+    "math"
+    "fmt"
+    "strings"
+)
+function main() {
+    math.Floor(2.75)
+    strings.Title("Head first Go")
+}
+```
+Chúng ta vừa ``import`` 2 gói là ``math`` và ``strings``, chúng ta có thể truy cập hàm ``Floor`` với cú pháp ``math.Floor`` và hàm ``Title`` với ``strings.Title``.
