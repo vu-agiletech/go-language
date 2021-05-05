@@ -79,10 +79,10 @@ Nó sẽ được lược bỏ nếu bạn sử dụng ``fmt``
 ### Hàm được gọi như thế nào?
 Ví dụ của chúng ta bao gồm một function từ ``fmt package``. Để gọi một function, hãy lấy tên function đó (``Println`` trong trường hợp này), và một cặp dấu ngoặc đơn.
 Giống như nhiều function, ``Println`` có thể nhận một hoặc nhiều ``arguments``: giá trị bạn muốn function làm việc với.
-``Println`` có thể được gọi mà không cần ``arguments``, hoặc bạn có thể cung cấp một số ``arguments``. Khi chúng ta xem xét các chức năng khác sau, tuy nhiên, bạn sẽ tìm kiếm hầu hết một tham số cụ thể. Nếu bạn cung cấp nhiều hơm, bạn sẽ nhận được thông báo lỗi số lượng tham số mong chờ và bạn sẽ sửa code của bạn.
+``Println`` có thể được gọi mà không cần ``arguments``, hoặc bạn có thể cung cấp một số ``arguments``. Khi chúng ta xem xét các chức năng khác sau, tuy nhiên, bạn sẽ tìm kiếm hầu hết một tham số cụ thể. Nếu bạn cung cấp nhiều hơn, bạn sẽ nhận được thông báo lỗi số lượng tham số mong chờ và bạn sẽ sửa code của bạn.
 
-### The Println function
-Sử dụng ``Println function`` khi bạn muốn nhìn thấy chương trình của bạn đang làm. Bất cứ tham số bạn truyền vào nó sẽ được in ra(hiện thị) ở trên ``terminal`` của bạn, mỗi tham số được ngăn cách bởi một dòng.
+### Hàm Println 
+Sử dụng hàm ``Println`` khi bạn muốn nhìn thấy chương trình của bạn đang làm. Bất cứ tham số bạn truyền vào nó sẽ được in ra(hiện thị) ở trên ``terminal`` của bạn, mỗi tham số được ngăn cách bởi một dòng.
 
 Sau khi in hết những tham số, ``Println`` sẽ bỏ qua một dòng trên ``terminal``. (Đó là lý do tại sao nó có ``ln`` ở trong tên)
 
